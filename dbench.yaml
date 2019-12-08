@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: dbench
-        image: logdna/dbench:latest
+        image: julego/dbench:latest
         imagePullPolicy: Always
         env:
           - name: DBENCH_MOUNTPOINT
@@ -37,6 +37,8 @@ spec:
           #   value: 256M
           # - name: FIO_DIRECT
           #   value: "0"
+          # - name: FIO_FALLOCATE
+          #   value: "posix"
         volumeMounts:
         - name: dbench-pv
           mountPath: /data
